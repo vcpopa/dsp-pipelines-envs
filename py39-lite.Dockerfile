@@ -36,7 +36,9 @@ RUN pip install --no-cache-dir \
     azure-keyvault-secrets \
     azure-identity \
     azure-storage-file-share \
-    openpyxl
+    openpyxl \
+    adal
+
  # Install git
 RUN apt-get update && \
 apt-get install -y git
