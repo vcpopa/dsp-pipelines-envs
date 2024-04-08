@@ -1,0 +1,24 @@
+{
+    "name": "Python 3.10 Dev Container",
+    "dockerFile": "py310-lite.Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "eamodio.gitlens",
+                "editorconfig.editorconfig",
+                "ms-python.vscode-pylance",
+                "ms-python.pyright",
+                "ms-python.pylance",
+                "ms-python.black"
+            ]
+        }
+    },
+    "runArgs": [
+        "--user=root"
+    ],
+    "postCreateCommand": "pip install -r requirements.txt"
+}

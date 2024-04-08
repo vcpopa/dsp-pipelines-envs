@@ -42,14 +42,14 @@ NOTEBOOK_COPY="$WORKDIR/$(basename "$NOTEBOOK")"
 # Function to replace -tailscale- with -public- in the notebook copy
 replace_tailscale_with_public() {
     local temp_file=$(mktemp)
-    
+
     if ! jq '
     (.. | select(type == "string") | select(test("tailscale"))) |= gsub("tailscale"; "public")
     ' "$NOTEBOOK_COPY" > "$temp_file"; then
         log "jq operation failed"
         exit 1
     fi
-    
+
     mv "$temp_file" "$NOTEBOOK_COPY" || { log "Failed to move temporary file after replacement"; exit 1; }
 }
 
@@ -70,7 +70,7 @@ OUTPUT_HTML="$WORKDIR/$(basename "$OUTPUT_PATH").html"
 if ! jupyter nbconvert --to html --execute "$NOTEBOOK_COPY" --output "$OUTPUT_HTML" &> "$WORKDIR/nbconvert.log"; then
     log "Failed to convert notebook. See $WORKDIR/nbconvert.log for details."
     log "Copying log file to $LOG_DIR..."
-    cp "$WORKDIR/nbconvert.log" "$LOG_DIR/nbconvert.log" || log "Failed to copy log file to $LOG_DIR."    
+    cp "$WORKDIR/nbconvert.log" "$LOG_DIR/nbconvert.log" || log "Failed to copy log file to $LOG_DIR."
     exit 1
 fi
 
