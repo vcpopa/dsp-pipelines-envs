@@ -1,5 +1,5 @@
 # Use an official Python runtime based on Debian 11 (Bullseye)
-FROM --platform=linux/amd64 python:3.10-slim-buster
+FROM --platform=linux/amd64 python:3.11-slim-buster
  
 # UPGRADE pip3
 RUN pip3 install --upgrade pip
