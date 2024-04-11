@@ -8,12 +8,14 @@
             },
             "extensions": [
                 "ms-python.python",
-                "eamodio.gitlens",
                 "editorconfig.editorconfig",
                 "ms-python.vscode-pylance",
                 "ms-python.pyright",
                 "ms-python.pylance",
-                "ms-python.black"
+                "ms-python.black",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers"
             ]
         }
     },

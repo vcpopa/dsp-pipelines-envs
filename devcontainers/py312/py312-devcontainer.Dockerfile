@@ -19,13 +19,3 @@ RUN apt-get update && apt-get install -y \
 # Copy requirements.txt to the container
 COPY requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
-
-# Copy the Bash script and IP mappings file into the container.
-# Make sure you have these files in your Docker context
-COPY process_notebook.sh /usr/local/bin/
-
-# Make the script executable
-RUN chmod +x /usr/local/bin/process_notebook.sh
-
-# The CMD runs the script with the IP mappings and notebook file.
-CMD /usr/local/bin/process_notebook.sh "$NOTEBOOK_PATH" "$OUTPUT_PATH" && echo 'Notebook processing completed.'
