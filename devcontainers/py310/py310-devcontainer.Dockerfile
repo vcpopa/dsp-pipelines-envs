@@ -1,10 +1,7 @@
-# Use an official Python runtime based on Debian 11 (Bullseye)
 FROM --platform=linux/amd64 python:3.10-slim-buster
 
-# UPGRADE pip3
 RUN pip3 install --upgrade pip
 
-# SQL driver dependencies
 RUN apt-get update && apt-get install -y \
     gnupg2 \
     curl \
@@ -15,8 +12,8 @@ RUN apt-get update && apt-get install -y \
     apt-get update && \
     ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
 
-# Install specific versions of common data science packages
 RUN pip install --no-cache-dir \
+    ipykernel \
     notebook \
     nbconvert \
     numpy \
@@ -38,7 +35,6 @@ RUN pip install --no-cache-dir \
     openpyxl \
     adal
 
-# Install git
 RUN apt-get update && \
     apt-get install -y git
 RUN pip install git+https://github.com/vcpopa/dsptools.git
