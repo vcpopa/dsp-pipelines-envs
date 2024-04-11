@@ -19,3 +19,5 @@ azure-storage-file-share
 openpyxl
 adal
 tabulate
+jupyter
+ipykernel
