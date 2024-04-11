@@ -1,6 +1,6 @@
 {
-    "name": "Python 3.10 Dev Container",
-    "dockerFile": "py310-lite.Dockerfile",
+    "name": "Python 3.12 Dev Container",
+    "dockerFile": "py312-devcontainer.Dockerfile",
     "customizations": {
         "vscode": {
             "settings": {
@@ -8,7 +8,6 @@
             },
             "extensions": [
                 "ms-python.python",
-                "eamodio.gitlens",
                 "editorconfig.editorconfig",
                 "ms-python.vscode-pylance",
                 "ms-python.pyright",

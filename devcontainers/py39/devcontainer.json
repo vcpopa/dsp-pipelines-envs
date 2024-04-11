@@ -1,0 +1,23 @@
+{
+    "name": "Python 3.9 Dev Container",
+    "dockerFile": "py309-devcontainer.Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "eamodio.gitlens",
+                "editorconfig.editorconfig",
+                "ms-python.vscode-pylance",
+                "ms-python.pyright",
+                "ms-python.pylance",
+                "ms-python.black"
+            ]
+        }
+    },
+    "runArgs": [
+        "--user=root"
+    ]
+}
